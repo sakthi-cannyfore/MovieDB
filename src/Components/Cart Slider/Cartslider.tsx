@@ -33,44 +33,43 @@ const CartSlider = ({ items, slidesPerView = 5 }: CartSliderProps) => {
         className="!overflow-visible"
         speed={700}
       >
-        {items.map((item,index) => (
+        {items.map((item, index) => (
           <SwiperSlide>
-        <Link to={`/movie/${item.id}` } key={`${item.id}-${index}`}>
-        <div  className="h-[200px] sm:w-[220px] sm:h-full bg-black rounded-b-xl  text-center cursor-pointer">
-              {!item.poster_path ? (
-                <img
-                  src={loadingimage}
-                  alt={item.title}
-                  className="w-full h-[330x] object-cover rounded-t-xl "
-                />
-              ) : (
-                <img
-                  src={`${image_base_url}${item.poster_path}`}
-                  alt={item.title}
-                  className="w-full h-[330x] object-cover rounded-t-xl "
-                />
-              )}
+            <Link to={`/movie/${item.id}`} key={`${item.id}-${index}`}>
+              <div className="h-[200px] sm:w-[220px] sm:h-full bg-black rounded-b-xl  text-center cursor-pointer">
+                {!item.poster_path ? (
+                  <img
+                    src={loadingimage}
+                    alt={item.title}
+                    className="w-full h-[330x] object-cover rounded-t-xl "
+                  />
+                ) : (
+                  <img
+                    src={`${image_base_url}${item.poster_path}`}
+                    alt={item.title}
+                    className="w-full h-[330x] object-cover rounded-t-xl "
+                  />
+                )}
 
-<div className="bg-gray-800 h-full rounded-b-xl">
-  <div className="flex justify-center items-center gap-1 mb-2 mx-2">
-    <div className="text-white text-xs sm:text-sm mt-1 text-center">
-      <StarRating popularity={item.popularity} />
-      <p className="text-xs sm:text-md">
-        {item.popularity.toFixed(2)}
-      </p>
-    </div>
-  </div>
+                <div className="bg-gray-800 h-full rounded-b-xl">
+                  <div className="flex justify-center items-center gap-1 mb-2 mx-2">
+                    <div className="text-white text-xs sm:text-sm mt-1 text-center">
+                      <StarRating popularity={item.popularity} />
+                      <p className="text-xs sm:text-md">
+                        {item.popularity.toFixed(2)}
+                      </p>
+                    </div>
+                  </div>
 
-  <p className="text-xs sm:text-sm md:text-lg text-white">
-    {item.title}
-  </p>
+                  <p className="text-xs sm:text-sm md:text-lg text-white">
+                    {item.title}
+                  </p>
 
-  <p className="text-xs sm:text-sm text-white">
-    <FormatDate dateString={item?.release_date} />
-  </p>
-</div>
-
-            </div>
+                  <p className="text-xs sm:text-sm text-white">
+                    <FormatDate dateString={item?.release_date} />
+                  </p>
+                </div>
+              </div>
             </Link>
           </SwiperSlide>
         ))}

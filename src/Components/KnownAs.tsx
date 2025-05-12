@@ -3,17 +3,13 @@ import { base_Url, api_key, image_base_url } from "./Utils";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import noimage from '../../src/assets/no-photo-male.svg'
+import noimage from "../../src/assets/no-photo-male.svg";
 
 interface PropsTypesForRelatedMovies {
   id: Number;
   original_title: String;
   poster_path: String;
 }
-
-// {id,original_title,poster_path}:PropsTypesForRelatedMovies
-
-//https://api.themoviedb.org/3/person/976/movie_credits?api_key=0c2efce2a23fcafc5658862d35fc6291
 
 const KnownAs = () => {
   const [videos, setVideos] = useState<PropsTypesForRelatedMovies[]>([]);
@@ -36,8 +32,8 @@ const KnownAs = () => {
       fetchVideos();
     }
   }, [id]);
-  if(Loading){
-    <div>Loading...</div>
+  if (Loading) {
+    <div>Loading...</div>;
   }
 
   return (
@@ -53,7 +49,11 @@ const KnownAs = () => {
                 className="flex-shrink-0 w-[160px] flex flex-col items-center cursor-pointer"
               >
                 <img
-                  src={item.poster_path ? `${image_base_url}/${item.poster_path}`: noimage}
+                  src={
+                    item.poster_path
+                      ? `${image_base_url}/${item.poster_path}`
+                      : noimage
+                  }
                   alt=""
                   className="w-[150px] rounded-lg"
                 />

@@ -23,11 +23,11 @@ const Mainbanner = () => {
         });
     }
   };
-  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>)=>{
-    if(e.key==="Enter"){
-      handlethesearch()
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handlethesearch();
     }
-}
+  };
   return (
     <div>
       <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px]">

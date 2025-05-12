@@ -6,13 +6,14 @@ import CartSlider from "../Cart Slider/Cartslider";
 import TrendingText from "../Trending/TrendingText";
 const TrendingMovies = () => {
   const dispatch = useDispatch<Appdispatch>();
-  const { moviesTrending } = useSelector((state: RootState) => state.trendingMovies);
-  const [selectedType,setSelectedType]=useState<"day"|"week">("day")
-
+  const { moviesTrending } = useSelector(
+    (state: RootState) => state.trendingMovies
+  );
+  const [selectedType, setSelectedType] = useState<"day" | "week">("day");
 
   useEffect(() => {
     dispatch(fetchTrendingMovies(selectedType));
-  }, [dispatch,selectedType]);
+  }, [dispatch, selectedType]);
 
   useEffect(() => {
     if (moviesTrending.length > 0) {
@@ -22,7 +23,10 @@ const TrendingMovies = () => {
 
   return (
     <div>
-        <TrendingText  setSelectedType={setSelectedType} selectedType={selectedType}/>
+      <TrendingText
+        setSelectedType={setSelectedType}
+        selectedType={selectedType}
+      />
       {moviesTrending.length > 0 && (
         <CartSlider slidesPerView={5} items={moviesTrending} />
       )}

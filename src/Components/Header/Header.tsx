@@ -51,7 +51,7 @@ const Header = () => {
               <img
                 src={gitLogo}
                 alt="git-logo"
-                className="w-[30px] h-[30px] mx-2 sm:w-[40px] sm:h-[40px] rounded-full"
+                className="w-[30px] h-[30px] mx-2 sm:w-[40px] sm:h-[40px] rounded-full" 
               />
             </a>
           </div>

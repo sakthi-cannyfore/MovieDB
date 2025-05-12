@@ -27,11 +27,7 @@ const PopularTVShows: React.FC = () => {
     fetchTVShows();
   }, []);
 
-  return (
-    <>
-    test
-  </>
-  );
+  return <>test</>;
 };
 
 export default PopularTVShows;

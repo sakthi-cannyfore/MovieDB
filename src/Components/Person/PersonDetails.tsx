@@ -8,10 +8,8 @@ import KnownAs from "../KnownAs";
 
 const PersonDetails = () => {
   const dispatch = useDispatch<Appdispatch>();
-  const {person} = useSelector((state: RootState) => state.personDetails);
+  const { person } = useSelector((state: RootState) => state.personDetails);
   const { id } = useParams<{ id: string }>();
-
-
 
   useEffect(() => {
     if (id) {
@@ -76,7 +74,7 @@ const PersonDetails = () => {
           {person.biography || "No biography available."}
         </p>
 
-        <KnownAs/>
+        <KnownAs />
       </div>
     </div>
   );

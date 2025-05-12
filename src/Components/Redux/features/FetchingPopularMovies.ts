@@ -6,10 +6,10 @@ import { HttpClient } from "../ApiService";
 
 interface moviesState {
   movies: Movie[];
-  selectedMovie: Movie| null;
+  selectedMovie: Movie | null;
   status: "loading" | "success" | "failed";
   error: string | null;
-  genres:Genre[]|null
+  genres: Genre[] | null;
 }
 
 const initialState: moviesState = {
@@ -17,7 +17,7 @@ const initialState: moviesState = {
   selectedMovie: null,
   status: "success",
   error: null,
-  genres:null
+  genres: null,
 };
 
 export const fetchPopularMovies = createAsyncThunk(
@@ -29,7 +29,6 @@ export const fetchPopularMovies = createAsyncThunk(
     return response.data.results as Movie[];
   }
 );
-//https://api.themoviedb.org/3/movie/27205/videos?api_key=0c2efce2a23fcafc5658862d35fc6291
 
 export const fetchPopularMoviesById = createAsyncThunk(
   "movies/fetchById",

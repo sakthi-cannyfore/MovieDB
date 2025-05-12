@@ -11,7 +11,7 @@ const FormatDate: React.FC<FormatDateProps> = ({ dateString }) => {
     day: "numeric",
   });
 
-  return <span>{formattedDate}</span>;
+  return <span>{formattedDate}</span>; 
 };
 
 export default FormatDate;

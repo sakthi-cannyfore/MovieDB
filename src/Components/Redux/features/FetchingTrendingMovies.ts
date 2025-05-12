@@ -11,7 +11,7 @@ interface moviesState {
 }
 
 const initialState: moviesState = {
-    moviesTrending: [],
+  moviesTrending: [],
   status: "success",
   error: null,
 };

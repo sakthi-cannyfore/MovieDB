@@ -7,12 +7,11 @@ import PopularText from "../Popular/PopularText";
 const PopularMovies = () => {
   const dispatch = useDispatch<Appdispatch>();
   const { movies } = useSelector((state: RootState) => state.popularMovies);
-  const [selectedType,setSelectedType]=useState<"movie"|"tv">("movie")
-
+  const [selectedType, setSelectedType] = useState<"movie" | "tv">("movie");
 
   useEffect(() => {
     dispatch(fetchPopularMovies(selectedType));
-  }, [dispatch,selectedType]);
+  }, [dispatch, selectedType]);
 
   useEffect(() => {
     if (movies.length > 0) {
@@ -22,10 +21,11 @@ const PopularMovies = () => {
 
   return (
     <div>
-      <PopularText setSelectedType={setSelectedType} selectedType={selectedType} /> 
-      {movies.length > 0 && (
-        <CartSlider slidesPerView={5} items={movies} />
-      )}
+      <PopularText
+        setSelectedType={setSelectedType}
+        selectedType={selectedType}
+      />
+      {movies.length > 0 && <CartSlider slidesPerView={5} items={movies} />}
     </div>
   );
 };
