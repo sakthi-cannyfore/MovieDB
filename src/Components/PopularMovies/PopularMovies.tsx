@@ -15,7 +15,6 @@ const PopularMovies = () => {
 
   useEffect(() => {
     if (movies.length > 0) {
-      console.log("Movies fetched:", movies);
     }
   }, [movies]);
 

@@ -18,8 +18,7 @@ const Header = () => {
       dispatch(SearchMovies(query))
         .unwrap()
         .then((results) => {
-          console.log("Movies:", results.movies);
-          console.log("Persons:", results.person);
+         
           navigation("/search");
         })
         .catch((err) => {

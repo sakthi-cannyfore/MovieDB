@@ -43,7 +43,6 @@ const MovieDetails = () => {
     });
 
     if (director.length > 0) {
-      console.log("testtt", director);
     }
   }, [movieId]);
 

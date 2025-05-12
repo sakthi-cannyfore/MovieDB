@@ -14,7 +14,6 @@ const Mainbanner = () => {
       dispatch(SearchMovies(query))
         .unwrap()
         .then((results) => {
-          console.log("Search results ****:", results);
           navigation("/search");
         })
 

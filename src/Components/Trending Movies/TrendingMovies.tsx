@@ -17,7 +17,6 @@ const TrendingMovies = () => {
 
   useEffect(() => {
     if (moviesTrending.length > 0) {
-      console.log("Movies fetched:", moviesTrending);
     }
   }, [moviesTrending]);
 
